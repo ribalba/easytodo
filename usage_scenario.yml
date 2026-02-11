@@ -143,32 +143,6 @@ flow:
 
 
 
-  - name: CreateToDo Text 1000000
-    container: bench
-    commands:
-      - type: console
-        command: bash /app/scripts/create_todo_bench.sh -n 100 -u testuser -p testuser -b http://nginx -t 1000000 -f 0
-
-  - name: GetToDos Text 1000000
-    container: bench
-    commands:
-      - type: console
-        command: bash /app/scripts/get_todos_bench.sh -n 100 -u testuser -p testuser -b http://nginx
-
-  - name: Done Text 1000000
-    container: bench
-    commands:
-      - type: console
-        command: bash /app/scripts/done_bench.sh -n 1 -u testuser -p testuser -b http://nginx
-
-  - name: Delete Text 1000000
-    container: bench
-    commands:
-      - type: console
-        command: bash /app/scripts/delete_all_todos_bench.sh -n 1 -u testuser -p testuser -b http://nginx
-
-
-
   # - name: Logout 100
   #   container: bench
   #   commands:
