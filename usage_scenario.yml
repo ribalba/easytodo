@@ -6,35 +6,35 @@ description: This is a benchmark for the EasyTodo application. It simulates a us
 compose-file: !include docker-compose.yml
 
 flow:
-  - name: Login 100
-    container: bench
-    commands:
-      - type: console
-        command: bash /app/scripts/login_bench.sh -n 100 -u testuser -p testuser -b http://nginx
+  # - name: Login 100
+  #   container: bench
+  #   commands:
+  #     - type: console
+  #       command: bash /app/scripts/login_bench.sh -n 100 -u testuser -p testuser -b http://nginx
 
-  - name: Login 200
-    container: bench
-    commands:
-      - type: console
-        command: bash /app/scripts/login_bench.sh -n 200 -u testuser -p testuser -b http://nginx
+  # - name: Login 200
+  #   container: bench
+  #   commands:
+  #     - type: console
+  #       command: bash /app/scripts/login_bench.sh -n 200 -u testuser -p testuser -b http://nginx
 
-  - name: Login 300
-    container: bench
-    commands:
-      - type: console
-        command: bash /app/scripts/login_bench.sh -n 300 -u testuser -p testuser -b http://nginx
+  # - name: Login 300
+  #   container: bench
+  #   commands:
+  #     - type: console
+  #       command: bash /app/scripts/login_bench.sh -n 300 -u testuser -p testuser -b http://nginx
 
-  - name: Login 500
-    container: bench
-    commands:
-      - type: console
-        command: bash /app/scripts/login_bench.sh -n 500 -u testuser -p testuser -b http://nginx
+  # - name: Login 500
+  #   container: bench
+  #   commands:
+  #     - type: console
+  #       command: bash /app/scripts/login_bench.sh -n 500 -u testuser -p testuser -b http://nginx
 
-  - name: Login 1000
-    container: bench
-    commands:
-      - type: console
-        command: bash /app/scripts/login_bench.sh -n 1000 -u testuser -p testuser -b http://nginx
+  # - name: Login 1000
+  #   container: bench
+  #   commands:
+  #     - type: console
+  #       command: bash /app/scripts/login_bench.sh -n 1000 -u testuser -p testuser -b http://nginx
 
 
 
@@ -64,25 +64,25 @@ flow:
 
 
 
-  - name: CreateToDo Text 200
+  - name: CreateToDo Text 1000
     container: bench
     commands:
       - type: console
-        command: bash /app/scripts/create_todo_bench.sh -n 100 -u testuser -p testuser -b http://nginx -t 200 -f 0
+        command: bash /app/scripts/create_todo_bench.sh -n 100 -u testuser -p testuser -b http://nginx -t 1000 -f 0
 
-  - name: GetToDos Text 200
+  - name: GetToDos Text 1000
     container: bench
     commands:
       - type: console
         command: bash /app/scripts/get_todos_bench.sh -n 100 -u testuser -p testuser -b http://nginx
 
-  - name: Done Text 200
+  - name: Done Text 1000
     container: bench
     commands:
       - type: console
         command: bash /app/scripts/done_bench.sh -n 1 -u testuser -p testuser -b http://nginx
 
-  - name: Delete Text 200
+  - name: Delete Text 1000
     container: bench
     commands:
       - type: console
@@ -90,25 +90,25 @@ flow:
 
 
 
-  - name: CreateToDo Text 300
+  - name: CreateToDo Text 10000
     container: bench
     commands:
       - type: console
-        command: bash /app/scripts/create_todo_bench.sh -n 100 -u testuser -p testuser -b http://nginx -t 300 -f 0
+        command: bash /app/scripts/create_todo_bench.sh -n 100 -u testuser -p testuser -b http://nginx -t 10000 -f 0
 
-  - name: GetToDos Text 300
+  - name: GetToDos Text 10000
     container: bench
     commands:
       - type: console
         command: bash /app/scripts/get_todos_bench.sh -n 100 -u testuser -p testuser -b http://nginx
 
-  - name: Done Text 300
+  - name: Done Text 10000
     container: bench
     commands:
       - type: console
         command: bash /app/scripts/done_bench.sh -n 1 -u testuser -p testuser -b http://nginx
 
-  - name: Delete Text 300
+  - name: Delete Text 10000
     container: bench
     commands:
       - type: console
@@ -116,25 +116,25 @@ flow:
 
 
 
-  - name: CreateToDo Text 500
+  - name: CreateToDo Text 100000
     container: bench
     commands:
       - type: console
-        command: bash /app/scripts/create_todo_bench.sh -n 100 -u testuser -p testuser -b http://nginx -t 500 -f 0
+        command: bash /app/scripts/create_todo_bench.sh -n 100 -u testuser -p testuser -b http://nginx -t 100000 -f 0
 
-  - name: GetToDos Text 500
+  - name: GetToDos Text 100000
     container: bench
     commands:
       - type: console
         command: bash /app/scripts/get_todos_bench.sh -n 100 -u testuser -p testuser -b http://nginx
 
-  - name: Done Text 500
+  - name: Done Text 100000
     container: bench
     commands:
       - type: console
         command: bash /app/scripts/done_bench.sh -n 1 -u testuser -p testuser -b http://nginx
 
-  - name: Delete Text 500
+  - name: Delete Text 100000
     container: bench
     commands:
       - type: console
@@ -142,32 +142,59 @@ flow:
 
 
 
-  - name: Logout 100
-    container: bench
-    commands:
-      - type: console
-        command: bash /app/scripts/logout_bench.sh -n 100 -b http://nginx
 
-  - name: Logout 200
+  - name: CreateToDo Text 1000000
     container: bench
     commands:
       - type: console
-        command: bash /app/scripts/logout_bench.sh -n 200 -b http://nginx
+        command: bash /app/scripts/create_todo_bench.sh -n 100 -u testuser -p testuser -b http://nginx -t 1000000 -f 0
 
-  - name: Logout 300
+  - name: GetToDos Text 1000000
     container: bench
     commands:
       - type: console
-        command: bash /app/scripts/logout_bench.sh -n 300 -b http://nginx
+        command: bash /app/scripts/get_todos_bench.sh -n 100 -u testuser -p testuser -b http://nginx
 
-  - name: Logout 500
+  - name: Done Text 1000000
     container: bench
     commands:
       - type: console
-        command: bash /app/scripts/logout_bench.sh -n 500 -b http://nginx
+        command: bash /app/scripts/done_bench.sh -n 1 -u testuser -p testuser -b http://nginx
 
-  - name: Logout 1000
+  - name: Delete Text 1000000
     container: bench
     commands:
       - type: console
-        command: bash /app/scripts/logout_bench.sh -n 1000 -b http://nginx
+        command: bash /app/scripts/delete_all_todos_bench.sh -n 1 -u testuser -p testuser -b http://nginx
+
+
+
+  # - name: Logout 100
+  #   container: bench
+  #   commands:
+  #     - type: console
+  #       command: bash /app/scripts/logout_bench.sh -n 100 -b http://nginx
+
+  # - name: Logout 200
+  #   container: bench
+  #   commands:
+  #     - type: console
+  #       command: bash /app/scripts/logout_bench.sh -n 200 -b http://nginx
+
+  # - name: Logout 300
+  #   container: bench
+  #   commands:
+  #     - type: console
+  #       command: bash /app/scripts/logout_bench.sh -n 300 -b http://nginx
+
+  # - name: Logout 500
+  #   container: bench
+  #   commands:
+  #     - type: console
+  #       command: bash /app/scripts/logout_bench.sh -n 500 -b http://nginx
+
+  # - name: Logout 1000
+  #   container: bench
+  #   commands:
+  #     - type: console
+  #       command: bash /app/scripts/logout_bench.sh -n 1000 -b http://nginx
