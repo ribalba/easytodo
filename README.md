@@ -30,6 +30,32 @@ The app is available at `http://localhost:8080`.
 
 All endpoints return JSON. All except `/login` and `/logout` require an authenticated session.
 
+## Nginx energy/carbon headers
+
+Nginx reads per-route models from `url_energy.json` and adds response headers on every request.
+
+Formula used:
+
+```text
+operational_gCO2eq = energy * grid_intensity
+embodied_gCO2eq = embodied_rate * request_time_seconds
+total_gCO2eq = operational_gCO2eq + embodied_gCO2eq
+```
+
+Supported `energy_model.kind` values:
+- `constant`
+- `linear`
+- `curve` (piecewise linear interpolation with `linear_tail` or `clamp` extrapolation)
+
+Response headers:
+- `X-Energy-Value`
+- `X-Grid-Intensity`
+- `X-Embodied-gCO2eq`
+- `X-Operational-gCO2eq`
+- `X-Request-Carbon-gCO2eq`
+- `X-Request-Time-Sec`
+- `X-Data-Size-Bytes`
+
 ## Benchmark scripts
 
 Shell scripts in `scripts/` call each endpoint `n` times (1..100000). Examples:
